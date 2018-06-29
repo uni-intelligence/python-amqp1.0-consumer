@@ -31,5 +31,5 @@ $ python3.5 amqp_client.py -p processors.file.FileProcessor -Dfile=log.txt -Dind
 
 Save messages in hourly directories:
 ```bash
-$ python3.5 amqp_client.py -p processors.file.HourlyMultiFileProcessor -Dfile=log -Dindent=2 amqp(s)://<user>:<password>@<host>:<port>/<vhost,queue>
+$ python3.5 amqp_client.py -p processors.file.HourlyMultiFileProcessor -dir=log -Dindent=2 amqp(s)://<user>:<password>@<host>:<port>/<vhost,queue>
 ```
