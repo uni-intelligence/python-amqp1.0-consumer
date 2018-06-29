@@ -69,4 +69,4 @@ class HourlyMultiFileProcessor(MultiFileProcessor):
 
     def get_dir(self, broker_message):
         now = datetime.now(tz=pytz.utc)
-        return os.path.join(super().get_dir(), now.strftime('%Y-%m-%d'), now.strftime('%H'))
+        return os.path.join(super().get_dir(broker_message), now.strftime('%Y-%m-%d'), now.strftime('%H'))
