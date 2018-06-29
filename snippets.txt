@@ -1,0 +1,1 @@
+consumer/helpers/import_name from https://gist.github.com/cypreess/029ad411937d86d65690f9e06cb89c93
