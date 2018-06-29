@@ -6,13 +6,20 @@ from datetime import datetime
 
 import pytz
 
-from . import Processor
+
+class Processor:
+    def __init__(self, **kwargs):
+        self.kwargs = kwargs
+
+    def process(self, broker_message):
+        raise NotImplementedError
 
 
 class FileProcessor(Processor):
     """
     Process message by writing it to a given file. By default stdout is used.
     """
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -59,6 +66,7 @@ class HourlyMultiFileProcessor(MultiFileProcessor):
     """
     Splits saving of messages files into structure of directories like yyyy-mm-dd/hh/<num>.json
     """
+
     def get_dir(self, broker_message):
         now = datetime.now(tz=pytz.utc)
         return os.path.join(super().get_dir(), now.strftime('%Y-%m-%d'), now.strftime('%H'))

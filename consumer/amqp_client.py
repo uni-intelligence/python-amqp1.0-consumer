@@ -7,7 +7,7 @@ import xmltodict
 from proton.handlers import MessagingHandler
 from proton.reactor import Container
 
-from .helpers.import_name import import_name
+from helpers.import_name import import_name
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
